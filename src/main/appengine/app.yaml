@@ -1,0 +1,16 @@
+runtime: java11
+entrypoint: java -Xmx64m -jar bookstore-0.0.1-SNAPSHOT.jar
+handlers:
+  - url: /.*
+    script: this field is required, but ignored
+
+resources:
+  cpu: 2
+  memory_gb: 2.3
+  disk_size_gb: 10
+  volumes:
+    - name: ramdisk1
+      volume_type: tmpfs
+      size_gb: 0.5
+  env_variables:
+    MY_VAR: "my value"
